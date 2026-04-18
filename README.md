@@ -1,10 +1,31 @@
-# 🪨 SlateLink
+<h1 align="center">🪨 SlateLink</h1>
+<h3 align="center">
+  A minimalist biolink engine for technical professionals.
+</h3>
 
-**A high-fidelity, minimalist biolink engine architected for technical professionals.**
+<p align="center">
+  <img alt="Top Language" src="https://img.shields.io/github/languages/top/javierrayhan/SlateLink?color=0A0A0A&labelColor=1A1A1A">
+  
+  <img alt="Repo Size" src="https://img.shields.io/github/repo-size/javierrayhan/SlateLink?color=0A0A0A&labelColor=1A1A1A">
+  
+  <img alt="Last Commit" src="https://img.shields.io/github/last-commit/javierrayhan/SlateLink?color=0A0A0A&labelColor=1A1A1A">
 
-SlateLink is a performance-optimized digital headquarters designed to consolidate your professional presence. Unlike generic managed solutions, SlateLink prioritizes data sovereignty, typographic precision, and a proprietary security layer to safeguard your personal brand equity.
+  <a href="https://github.com/javierrayhan/SlateLink/blob/main/LICENSE">
+    <img alt="License" src="https://img.shields.io/github/license/javierrayhan/SlateLink?color=0A0A0A&labelColor=1A1A1A">
+  </a>
+</p>
 
-[Live Demo](https://slate.zavieray.my.id) • [Documentation](https://docs.example.my.id) • [Report Issue](https://github.com/javierrayhan/SlateLink/issues)
+<p align="center">
+  <a href="https://slate.zavieray.my.id">Live Demo</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="https://docs.javierrayhan.my.id">Documentation</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="https://github.com/javierrayhan/SlateLink/issues">Report Issue</a>
+</p>
+
+---
+
+<p align="center">
+  <img alt="Preview" src="images/darkmode.png">
+</p>
 
 ---
 
@@ -73,7 +94,7 @@ SlateLink is architected for a **zero-friction** deployment workflow.
 
 For deep-dive customization, including modifying animation physics or integrating third-party analytics, please refer to our technical guides:
 
-👉 [**View Technical Documentation (SOON)**](https://docs.example.my.id)
+👉 [**View Technical Documentation (SOON)**](docs.javierrayhan.my.id)
 
 ---
 
