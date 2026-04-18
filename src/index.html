@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SlateLink</title>
+    
+    <!-- Fonts: Public Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons (Phosphor Icons) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <!-- Security Banner Anchor -->
+    <div id="securityBannerAnchor"></div>
+
+    <main class="app-container">
+        
+        <!-- FLOATING CONTROLS (Rendered via JS based on Config) -->
+        <button id="themeToggleWrapper" aria-label="Toggle Theme">
+            <!-- Content injected via JS config -->
+        </button>
+
+        <button id="shareBtn" class="fab-btn" onclick="shareProfile()" aria-label="Share Profile">
+            <i class="ph-bold ph-export"></i>
+        </button>
+
+        <!-- PROFILE -->
+        <header class="profile-header">
+            <img src="" alt="Avatar" class="avatar" id="profileImage">
+            
+            <div class="name-wrapper">
+                <h1 class="name" id="profileName"></h1>
+                <i id="verifiedBadge" class="ph-fill ph-seal-check verified-badge"></i>
+            </div>
+            
+            <p class="role" id="profileRole"></p>
+            <div class="status-text" id="statusText"></div>
+
+            <!-- Socials -->
+            <div class="social-row" id="socialRow"></div>
+        </header>
+
+        <!-- TABS -->
+        <div class="tabs-wrapper">
+            <div class="tabs" id="tabsContainer"></div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content-container" id="contentArea"></div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-text">
+            <span class="footer-copyright">© 2026 Slate Link</span>
+            <a href="https://github.com/javierrayhan/SlateLink" target="_blank" class="footer-link">Powered by SlateLink</a>
+        </div>
+        <!-- 
+            ========================================================
+            DEVELOPER NOTE: OPEN SOURCE ATTRIBUTION
+            You are absolutely free to remove the "Powered by SlateLink" 
+            attribution if you want a 100% white-label look.
+            If you’d like to support me and this project, 
+            please keep this credit. Thank you!
+            ========================================================
+        -->
+    </footer>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast">Copied to clipboard</div>
+
+    <!-- Use external config for easy inline editing -->
+    <script src="js/config.js"></script>  
+    <script src="js/main.js"></script> 
+</body>
+</html>

@@ -1,0 +1,756 @@
+/* =========================================
+    1. MAIN CONFIGURATION (The Bones)
+    Strictly Layout, Typography, and Shapes. 
+    NO COLORS HERE! (Colors are handled in Dark/Light configs)
+    ========================================= */
+:root {
+    /* --- TYPOGRAPHY & FONTS --- */
+    /* To change fonts: Add the Google Font link in the <head> tag, then update the name here. */
+    --font-global: 'Inter', sans-serif;       
+
+    /* Specific Typographic Mapping */
+    --font-profile-name: 'Manrope', sans-serif;        
+    --font-profile-role: var(--font-global);        
+    --font-status: var(--font-global);              
+    --font-tabs: 'DM Sans', sans-serif;                
+    --font-section-label: 'DM Sans', sans-serif;       
+    --font-card-title: 'Plus Jakarta Sans', sans-serif;          
+    --font-card-desc: var(--font-global);      
+
+    /* --- FONT WEIGHTS --- */
+    /* Allows you to perfectly balance the thickness of different fonts. */
+    /* Standard scale: 300 (Light), 400 (Regular), 500 (Medium), 600 (Semi-Bold), 700 (Bold), 800 (Extra-Bold) */
+    --weight-profile-name: 700;
+    --weight-profile-role: 400;
+    --weight-status: 500;
+    --weight-tabs-default: 500;
+    --weight-tabs-active: 600;
+    --weight-section-label: 200;
+    --weight-card-title: 600;
+    --weight-card-desc: 400;
+       
+
+    /* --- ALIGNMENTS --- */
+    /* Options: 'center', 'flex-start' (left), or 'flex-end' (right) */
+    --profile-flex-align: center;
+    --profile-text-align: center;
+    --social-row-align: center;
+
+    /* --- SHAPES & BORDERS --- */
+    /* Change radius: 100px for pill-shape, 12px-16px for rounded rectangles, 0px for sharp edges */
+    --card-border-width: 1px;                         
+    --card-radius: 100px;                             
+    --radius-button: 100px;                       
+    --radius-circle: 50%;                         
+
+    /* --- POSITIONING OFFSETS --- */
+    /* Pushes floating buttons (Share, Theme) away from the screen edges */
+    --share-offset-x: clamp(1rem, 3vw, 2rem);
+    --share-offset-y-top: clamp(1rem, 3vw, 2rem);
+    --share-offset-y-bottom: clamp(2rem, 5vw, 3rem); 
+
+    /* --- LAYOUT MAX WIDTHS --- */
+    /* Keeps the biolink looking like a sleek mobile app even on ultra-wide desktop monitors */
+    --layout-max-width-mobile: 100%;              
+    --layout-max-width-tablet: 540px;             
+    --layout-max-width-desktop: 600px;            
+}
+
+/* =========================================
+    2. DARK MODE CONFIGURATION (The Default Vibe)
+    Strictly Colors, Backgrounds, and Shadows.
+    ========================================= */
+:root, [data-theme="dark"] {
+    /* --- BASE PALETTE --- */
+    --bg-base: #101011; /* The absolute background color of the page */                       
+    --text-main: #F3F4F6; /* Primary text (Name, Card Titles) */                        
+    --text-muted: #9CA3AF; /* Secondary text (Role, Descriptions) */                        
+    --border-subtle: rgba(255, 255, 255, 0.06); /* Used for faint dividers and basic outlines */  
+    
+    /* --- ACCENT COLORS --- */
+    /* Pro-tip: Use hsla() or rgba() for glows and dims so they blend perfectly with the background */
+    --color-primary: hsla(36, 72%, 70%, 1);       /* The main brand color (Gold) */
+    --color-primary-dim: hsla(36, 72%, 70%, 0.15); /* Faded brand color for soft glowing effects */
+
+    /* --- CARD STYLES --- */
+    --card-bg: rgba(255, 255, 255, 0.03); /* Base card color (slightly visible against dark bg) */         
+    --card-bg-hover: rgba(255, 255, 255, 0.07); /* Lightens up when hovered or tapped */  
+    --card-border-color: rgba(255, 255, 255, 0.06);   
+    --card-border-color-hover: hsla(36, 72%, 70%, 1); /* Border turns gold on hover */
+    
+    --card-icon-bg: rgba(255, 255, 255, 0.03);        
+    --card-icon-color: #F3F4F6;                       
+    --card-icon-bg-hover: rgba(255, 255, 255, 0.06);  
+    --card-icon-color-hover: hsla(36, 72%, 70%, 1);   
+
+    /* --- HIGHLIGHTED CARD (The "Featured" Link) --- */
+    --highlight-border-color: var(--color-primary);               
+    --highlight-bg-start: rgba(255, 255, 255, 0.03);              
+    --highlight-bg-end: rgba(234, 190, 124, 0.04); /* CALIBRATED: Cut the opacity in half for a highly subtle tint */               
+    --highlight-glow: 0 2px 8px rgba(234, 190, 124, 0.06); /* CALIBRATED: Tightened blur and killed the cheap neon vibe */      
+
+    /* --- SHADOWS --- */
+    --shadow-sm: 0 4px 12px rgba(0,0,0,0.1);      
+    --shadow-md: 0 8px 24px rgba(0,0,0,0.2);      
+    --shadow-lg: 0 10px 30px rgba(0,0,0,0.4);     
+    --shadow-card-hover: 0 10px 25px rgba(0,0,0,0.25); 
+}
+
+/* =========================================
+    3. LIGHT MODE CONFIGURATION (The Clean Look)
+    Strictly overrides for Colors, Backgrounds, and Shadows.
+    When data-theme="light" is active, these values replace the dark mode ones.
+    ========================================= */
+[data-theme="light"] {
+    /* --- BASE PALETTE --- */
+    --bg-base: #FAFAFA; /* Off-white to prevent eye strain (better than pure #FFF) */                       
+    --text-main: #18181B; /* Near-black for maximum readability */                        
+    --text-muted: #52525B;                        
+    --border-subtle: rgba(0, 0, 0, 0.08);   
+    
+    /* --- ACCENT COLORS --- */
+    --color-primary: rgb(238, 143, 0); /* Darkened the gold slightly for better contrast on light bg */      
+    --color-primary-dim: hsla(36, 72%, 60%, 0.15);
+
+    /* --- CARD STYLES --- */
+    --card-bg: #FFFFFF; /* Pure white cards on off-white background creates depth */         
+    --card-bg-hover: #F4F4F5;   
+    --card-border-color: rgba(0, 0, 0, 0.06);   
+    --card-border-color-hover: var(--color-primary); 
+    
+    --card-icon-bg: rgba(0, 0, 0, 0.04);        
+    --card-icon-color: #3F3F46;                       
+    --card-icon-bg-hover: rgba(0, 0, 0, 0.08);  
+    --card-icon-color-hover: var(--color-primary);   
+
+    /* --- HIGHLIGHTED CARD --- */
+    --highlight-border-color: var(--color-primary);               
+    --highlight-bg-start: #FFFFFF;              
+    --highlight-bg-end: rgba(238, 143, 0, 0.04); /* CALIBRATED: Extremely faint premium gradient */                
+    --highlight-glow: 0 2px 6px rgba(238, 143, 0, 0.06); /* CALIBRATED: Crisp, elegant lift instead of a massive aura */
+
+    /* --- SHADOWS --- */
+    /* Shadows in light mode need to be much softer and more transparent than dark mode */
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);      
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.08);      
+    --shadow-lg: 0 10px 30px rgba(0,0,0,0.15);
+    --shadow-card-hover: 0 8px 20px rgba(0,0,0,0.1); 
+}
+
+/* =========================================
+    4. BASE STYLES & ACCESSIBILITY
+    ========================================= */
+html, 
+body {
+    touch-action: manipulation;
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
+
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+    -webkit-tap-highlight-color: transparent; 
+}
+
+body {
+    background-color: var(--bg-base);
+    color: var(--text-main);
+    font-family: var(--font-global); 
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: clamp(2rem, 8vh, 6rem) clamp(1rem, 4vw, 1.5rem) 6rem;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    position: relative;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* --- EMPATHY TOGGLE (Reduced Motion) --- */
+body.reduced-motion * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Base Interactions */
+a { 
+    text-decoration: none; 
+    color: inherit; 
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+}
+
+button { 
+    font-family: inherit; 
+}
+
+/* Main Container Layout */
+.app-container {
+    width: 100%;
+    max-width: var(--layout-max-width-mobile);
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    margin: 0 auto; 
+    z-index: 1;
+    transition: max-width 0.4s cubic-bezier(0.16, 1, 0.3, 1); 
+}
+
+@media (min-width: 600px) { 
+    .app-container { 
+        max-width: var(--layout-max-width-tablet); 
+    } 
+}
+
+@media (min-width: 1024px) { 
+    .app-container { 
+        max-width: var(--layout-max-width-desktop); 
+    } 
+}
+
+/* =========================================
+    5. PROFILE SECTION & VERIFIED BADGE
+    ========================================= */
+.profile-header {
+    display: flex; 
+    flex-direction: column; 
+    width: 100%;
+    margin-bottom: clamp(1.5rem, 4vw, 2rem);
+    animation: fadeDown 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    align-items: var(--profile-flex-align);
+    text-align: var(--profile-text-align);
+}
+
+.avatar {
+    width: clamp(80px, 20vw, 112px); 
+    height: clamp(80px, 20vw, 112px);
+    border-radius: var(--radius-circle); 
+    object-fit: cover;
+    margin-bottom: clamp(1rem, 3vw, 1.25rem); 
+    box-shadow: var(--shadow-md);
+}
+
+.name-wrapper {
+    display: flex; 
+    align-items: center; 
+    justify-content: var(--profile-flex-align);
+    gap: 8px; 
+    margin-bottom: 0.25rem;
+}
+
+.name {
+    font-family: var(--font-profile-name); 
+    font-size: clamp(1.3rem, 5vw, 1.75rem);
+    font-weight: var(--weight-profile-name); 
+    color: var(--text-main);
+    letter-spacing: -0.02em; 
+}
+
+.verified-badge {
+    color: var(--color-primary);
+    font-size: clamp(1.1rem, 4.5vw, 1.5rem);
+    display: none; 
+}
+
+.role {
+    font-family: var(--font-profile-role); 
+    font-size: clamp(0.85rem, 3vw, 1rem);
+    color: var(--text-muted); 
+    font-weight: var(--weight-profile-role); 
+    margin-bottom: 1rem;
+}
+
+.status-text {
+    font-family: var(--font-status); 
+    display: inline-block;
+    font-size: clamp(0.75rem, 2.5vw, 0.85rem);
+    color: var(--color-primary); 
+    font-weight: var(--weight-status); 
+    letter-spacing: 0.02em;
+}
+
+/* =========================================
+    6. SOCIAL ROW
+    ========================================= */
+.social-row {
+    display: flex; 
+    gap: clamp(0.8rem, 3vw, 1.25rem); 
+    margin-top: 1.25rem;
+    flex-wrap: wrap; 
+    width: 100%; 
+    justify-content: var(--social-row-align);
+}
+
+.social-link {
+    color: var(--text-muted); 
+    font-size: clamp(1.3rem, 4vw, 1.5rem);
+    padding: 8px; 
+    border-radius: var(--radius-circle);
+    background: transparent; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+@media (hover: hover) { 
+    .social-link:hover { 
+        color: var(--color-primary); 
+        background: var(--card-bg); 
+        transform: scale(1.1); 
+    } 
+}
+
+.social-link:active { 
+    transform: scale(0.95); 
+}
+
+/* =========================================
+    7. TABS & CARDS
+    ========================================= */
+.tabs-wrapper {
+    width: 100%; 
+    display: flex; 
+    justify-content: center; 
+    margin-bottom: clamp(1.25rem, 4vw, 1.5rem);
+    animation: fadeUp 0.6s 0.1s both cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tabs {
+    display: flex; 
+    width: 100%; 
+    max-width: 320px; 
+    background: rgba(255,255,255,0.02); 
+    padding: 8px; 
+    border-radius: var(--radius-button); 
+    border: 1px solid var(--border-subtle);
+}
+
+.tab-btn {
+    font-family: var(--font-tabs); 
+    flex: 1;
+    padding: clamp(12px, 3vw, 14px) 12px; 
+    border: none; 
+    background: transparent;
+    color: var(--text-muted); 
+    font-weight: var(--weight-tabs-default); 
+    font-size: clamp(0.85rem, 3vw, 0.95rem);
+    border-radius: var(--radius-button); 
+    cursor: pointer; 
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active { 
+    background: var(--card-bg-hover); 
+    color: var(--text-main); 
+    font-weight: var(--weight-tabs-active); 
+    box-shadow: var(--shadow-sm); 
+}
+
+.content-container { 
+    width: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    gap: clamp(10px, 2vw, 14px); 
+}
+
+.list-card {
+    background: var(--card-bg); 
+    border: var(--card-border-width) solid var(--card-border-color);
+    border-radius: var(--card-radius); 
+    padding: clamp(12px, 3vw, 16px) clamp(16px, 4vw, 24px);
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    cursor: pointer; 
+    opacity: 0;
+    animation: slideUpFade 0.5s forwards cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (hover: hover) {
+    .list-card:hover { 
+        background: var(--card-bg-hover); 
+        border-color: var(--card-border-color-hover); 
+        transform: translateY(-3px); 
+        box-shadow: var(--shadow-card-hover); 
+    }
+    .list-card:hover .card-icon { 
+        color: var(--card-icon-color-hover); 
+        background: var(--card-icon-bg-hover); 
+    }
+    .list-card:hover .card-arrow { 
+        opacity: 1; 
+        transform: translateX(0); 
+        color: var(--color-primary); 
+    }
+}
+
+.list-card:active { 
+    transform: scale(0.98); 
+    background: var(--card-bg-hover); 
+}
+
+.card-content { 
+    display: flex; 
+    align-items: center; 
+    gap: clamp(12px, 3vw, 16px); 
+    flex: 1; 
+    min-width: 0; 
+}
+
+.card-icon {
+    font-size: clamp(1.2rem, 3.5vw, 1.4rem); 
+    color: var(--card-icon-color); 
+    background: var(--card-icon-bg);
+    width: clamp(38px, 10vw, 46px); 
+    height: clamp(38px, 10vw, 46px); 
+    flex-shrink: 0; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border-radius: var(--radius-circle); 
+    transition: all 0.3s;
+}
+
+.card-text { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 2px; 
+    min-width: 0; 
+    overflow: hidden; 
+}
+
+.card-title {
+    font-family: var(--font-card-title); 
+    font-weight: var(--weight-card-title); 
+    font-size: clamp(0.95rem, 3vw, 1.05rem);
+    color: var(--text-main); 
+    letter-spacing: -0.01em; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}
+
+.card-title-row { 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+    flex-wrap: wrap; 
+}
+
+.list-card.highlighted {
+    border-color: var(--highlight-border-color);
+    background: linear-gradient(145deg, var(--highlight-bg-start) 0%, var(--highlight-bg-end) 100%); 
+    box-shadow: var(--highlight-glow);
+}
+
+.card-desc {
+    font-family: var(--font-card-desc); 
+    font-size: clamp(0.75rem, 2.5vw, 0.85rem);
+    font-weight: var(--weight-card-desc);
+    color: var(--text-muted); 
+    line-height: 1.4; 
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}
+
+.card-arrow { 
+    color: var(--text-muted); 
+    font-size: clamp(1rem, 3vw, 1.2rem); 
+    flex-shrink: 0; 
+    margin-left: 10px; 
+    opacity: 1; 
+    transform: translateX(0); 
+    transition: all 0.3s; 
+}
+
+@media (min-width: 768px) { 
+    .card-arrow { 
+        opacity: 0; 
+        transform: translateX(-10px); 
+    } 
+}
+
+.section-label {
+    font-family: var(--font-section-label); 
+    font-size: clamp(0.7rem, 2.5vw, 0.75rem);
+    text-transform: uppercase; 
+    letter-spacing: 0.1em; 
+    color: var(--text-muted);
+    margin: 24px 0 6px 12px; 
+    font-weight: var(--weight-section-label); 
+    opacity: 0; 
+    animation: fadeUp 0.5s forwards;
+}
+
+/* =========================================
+    8. UTILS, ANIMATIONS, & FLOATING CONTROLS
+    ========================================= */
+.footer {
+    position: fixed; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    padding: 4rem 1rem 1rem;
+    font-size: clamp(0.75rem, 2vw, 0.85rem); 
+    color: var(--text-muted); 
+    text-align: center; 
+    z-index: 40; 
+    pointer-events: none; 
+}
+
+.footer::before {
+    content: ''; 
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0; 
+    z-index: -1;
+    background: linear-gradient(to top, var(--bg-base) 30%, transparent 100%);
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    -webkit-mask-image: linear-gradient(to top, black 50%, transparent 100%);
+    mask-image: linear-gradient(to top, black 50%, transparent 100%);
+}
+
+.footer-text { 
+    pointer-events: auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px; /* Tighter gap since the text is much smaller now */
+}
+
+.footer-copyright {
+    opacity: 0.6;
+}
+
+.footer-link {
+    font-size: 0.6rem; /* Shrunk it down */
+    font-weight: 400; /* Removed the bold weight for a cleaner, native look */
+    letter-spacing: 0.02em; /* Relaxed the tracking */
+    color: var(--text-muted);
+    text-decoration: none;
+    opacity: 0.4; /* Made it significantly more translucent */
+    transition: color 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+@media (hover: hover) {
+    .footer-link:hover {
+        color: var(--color-primary);
+        opacity: 1;
+        transform: translateY(-1px);
+    }
+}
+
+/* --- SECURITY WARNING (APPLE-STYLE PILL) --- */
+.apple-spoof-pill {
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(30, 30, 30, 0.7); /* Deep neutral glass */
+    backdrop-filter: blur(24px) saturate(150%);
+    -webkit-backdrop-filter: blur(24px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 9999;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    color: #F3F4F6; 
+    font-family: var(--font-global);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+    /* Apple-esque spring physics animation */
+    animation: appleDropBounce 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+[data-theme="light"] .apple-spoof-pill {
+    background: rgba(250, 250, 250, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    color: #18181B;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.05);
+}
+
+.apple-spoof-pill:active {
+    transform: translateX(-50%) scale(0.96);
+    opacity: 0.8;
+}
+
+.apple-spoof-pill .warning-icon {
+    color: #FF3B30; /* Authentic iOS System Red */
+    font-size: 1.1rem;
+}
+
+.apple-spoof-pill .arrow-icon {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-left: 2px;
+}
+
+/* Keyframes */
+@keyframes appleDropBounce {
+    0% { transform: translate(-50%, -40px) scale(0.9); opacity: 0; }
+    100% { transform: translate(-50%, 0) scale(1); opacity: 1; }
+}
+
+@keyframes fadeDown { 
+    from { opacity: 0; transform: translateY(-15px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+@keyframes fadeUp { 
+    from { opacity: 0; transform: translateY(15px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+@keyframes slideUpFade { 
+    from { opacity: 0; transform: translateY(20px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+/* Toast Component */
+.toast {
+    position: fixed; 
+    bottom: 5.5rem; 
+    left: 50%; 
+    transform: translateX(-50%) translateY(20px);
+    background: var(--text-main); 
+    color: var(--bg-base);
+    padding: clamp(8px, 2vw, 12px) clamp(16px, 4vw, 24px); 
+    border-radius: var(--radius-button); 
+    font-weight: 600; 
+    font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+    opacity: 0; 
+    pointer-events: none; 
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: var(--shadow-lg); 
+    z-index: 100; 
+    white-space: nowrap;
+}
+
+.toast.show { 
+    opacity: 1; 
+    transform: translateX(-50%) translateY(0); 
+}
+
+/* --- FLOATING ACTION COMPONENTS (Button & Switch) --- */
+.pos-top-right { top: var(--share-offset-y-top); right: var(--share-offset-x); }
+.pos-top-left { top: var(--share-offset-y-top); left: var(--share-offset-x); }
+.pos-bottom-right { bottom: var(--share-offset-y-bottom); right: var(--share-offset-x); }
+.pos-bottom-left { bottom: var(--share-offset-y-bottom); left: var(--share-offset-x); }
+
+/* Option A: The Standard Button */
+.fab-btn {
+    position: fixed; 
+    width: clamp(40px, 8vw, 48px); 
+    height: clamp(40px, 8vw, 48px);
+    display: none; 
+    align-items: center; 
+    justify-content: center; 
+    background: var(--card-bg);
+    border: 1px solid var(--border-subtle); 
+    border-radius: var(--radius-circle); 
+    color: var(--text-main);
+    font-size: clamp(1.1rem, 3vw, 1.3rem); 
+    cursor: pointer; 
+    z-index: 50;
+    backdrop-filter: blur(20px); 
+    -webkit-backdrop-filter: blur(20px); 
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@media (hover: hover) { 
+    .fab-btn:hover { 
+        background: rgba(128, 128, 128, 0.1); 
+        color: var(--color-primary); 
+        transform: scale(1.08); 
+        border-color: var(--color-primary-dim); 
+    } 
+}
+.fab-btn:active { transform: scale(0.95); }
+
+/* Option B: The Premium Toggle Switch */
+.fab-switch {
+    position: fixed;
+    width: 64px; 
+    height: 32px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-subtle);
+    border-radius: 32px;
+    display: none; 
+    align-items: center;
+    padding: 4px;
+    cursor: pointer;
+    z-index: 50;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.fab-switch-track {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 8px;
+    font-size: 14px;
+    color: var(--text-muted);
+    pointer-events: none;
+}
+
+.fab-switch-thumb {
+    width: 24px; 
+    height: 24px;
+    background: var(--text-main);
+    color: var(--bg-base);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    z-index: 2;
+    transform: translateX(0);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+[data-theme="light"] .fab-switch-thumb {
+    /* CALIBRATED: Changed from 30px to 32px so the thumb is perfectly flush with the right padding */
+    transform: translateX(32px); 
+}
+
+@media (hover: hover) { 
+    .fab-switch:hover {
+        border-color: var(--color-primary-dim);
+    }
+}
+
