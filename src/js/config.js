@@ -4,7 +4,7 @@ const config = {
     // -----------------------------------------
     profile: {
         name: "SlateLink",
-        role: "Minimalist Biolink for Developers and Profesionals",
+        role: "Minimalist Biolink for Developers and Professionals",
         status: "Demo Mode | Fully Configurable",
         image: "https://ui-avatars.com/api/?name=Slate+Link", 
     },
