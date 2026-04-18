@@ -16,7 +16,7 @@ const config = {
 
     socials: [
         { icon: "github-logo", url: "https://github.com/javierrayhan/SlateLink", type: "link" },
-        { icon: "globe", url: "#", type: "link" }, 
+        { icon: "globe", url: "https://zavieray.my.id", type: "link" }, 
         { icon: "instagram-logo", url: "#", type: "link" },
         { icon: "linkedin-logo", url: "#", type: "link" },
         { icon: "envelope-simple", url: "mailto:hello@example.com", type: "link" } 
