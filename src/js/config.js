@@ -10,8 +10,8 @@ const config = {
     },
 
     tabs: [
-        { id: "links", label: "Preview" },
-        { id: "shop", label: "Features" },
+        { id: "preview", label: "Preview" },
+        { id: "feature", label: "Features" },
     ],
 
     socials: [
@@ -32,7 +32,7 @@ const config = {
 
             // IMPORTANT: Add your actual domains here (www.domain.com). "localhost" and "127.0.0.1" are kept for local testing.
             // Leaving it empty "" handles users opening it directly from a local file:// URL.
-            allowedDomains: ["localhost", "127.0.0.1"], 
+            allowedDomains: ["localhost", "127.0.0.1", "slate.zavieray.my.id"], 
             spoofWarning: true,
             officialUrl: "https://github.com/javierrayhan/SlateLink" 
         },
@@ -65,13 +65,13 @@ const config = {
     // -----------------------------------------
     // 3. TAB CONTENT DATA
     // -----------------------------------------
-    links: [
+    preview: [
         { title: "Get the Source Code", desc: "Star the repo on GitHub", icon: "github-logo", url: "https://github.com/javierrayhan/SlateLink", highlighted: true},
         { title: "Documentation", desc: "How to setup your own SlateLink", icon: "book-open", url: "#", highlighted: false },
         { title: "Report a Bug", desc: "Help us improve the experience", icon: "bug", url: "#", highlighted: false }
     ],
 
-    shop: [
+    feature: [
         {
             category: "Core Capabilities",
             items: [

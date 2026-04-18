@@ -4,7 +4,7 @@
 
 SlateLink is a performance-optimized digital headquarters designed to consolidate your professional presence. Unlike generic managed solutions, SlateLink prioritizes data sovereignty, typographic precision, and a proprietary security layer to safeguard your personal brand equity.
 
-[Live Demo](https://zavieray.my.id) • [Documentation](https://docs.example.my.id) • [Report Issue](https://github.com/javierrayhan/SlateLink/issues)
+[Live Demo](https://slate.zavieray.my.id) • [Documentation](https://docs.example.my.id) • [Report Issue](https://github.com/javierrayhan/SlateLink/issues)
 
 ---
 
