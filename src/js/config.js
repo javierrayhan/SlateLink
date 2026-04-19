@@ -15,6 +15,8 @@ const config = {
     ],
 
     socials: [
+        // type: "link" for redirect
+        // type: "copy" for copy the link
         { icon: "github-logo", url: "https://github.com/javierrayhan/SlateLink", type: "link" },
         { icon: "globe", url: "https://zavieray.my.id", type: "link" }, 
         { icon: "instagram-logo", url: "#", type: "link" },
@@ -67,8 +69,8 @@ const config = {
     // -----------------------------------------
     preview: [
         { title: "Get the Source Code", desc: "Star the repo on GitHub", icon: "github-logo", url: "https://github.com/javierrayhan/SlateLink", highlighted: true},
-        { title: "Documentation", desc: "How to setup your own SlateLink", icon: "book-open", url: "#", highlighted: false },
-        { title: "Report a Bug", desc: "Help us improve the experience", icon: "bug", url: "#", highlighted: false }
+        { title: "Documentation (Soon)", desc: "How to setup your own SlateLink", icon: "book-open", url: "https://docs.javierrayhan.my.id", highlighted: false },
+        { title: "Report a Bug", desc: "Help us improve the experience", icon: "bug", url: "https://github.com/javierrayhan/SlateLink/issues", highlighted: false }
     ],
 
     feature: [
